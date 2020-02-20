@@ -37,11 +37,11 @@
 	give the clock a tsc timer for kvm to pass to the guest.
 	See comments on the <kvm> and <clock> attributes.
 -->
-  <name>macOS</name>
-  <uuid>2aca0dd6-cec9-4717-9ab2-0b7b13d111c3</uuid>
-  <title>macOS</title>
-  <memory unit='KiB'>8388608</memory>
-  <currentMemory unit='KiB'>8388608</currentMemory>
+  <name>macOS2</name>
+  <uuid>2aca0dd6-cec9-4717-9ab2-0b7b13d111c4</uuid>
+  <title>macOS2</title>
+  <memory unit='KiB'>4194304</memory>
+  <currentMemory unit='KiB'>4194304</currentMemory>
   <vcpu placement='static'>4</vcpu>
   <os>
     <type arch='x86_64' machine='q35'>hvm</type>
@@ -89,21 +89,21 @@
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2' cache='writeback'/>
-      <source file='/opt/libvirt-images/macos/CloverNG.qcow2'/>
+      <source file='/opt/libvirt-images/macos2/CloverNG.qcow2'/>
       <target dev='sda' bus='sata'/>
       <boot order='1'/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2' cache='writeback'/>
-      <source file='/opt/libvirt-pool/mac_hdd_ng.img'/>
+      <source file='/opt/libvirt-pool/mac_hdd_ng2.img'/>
       <target dev='sdb' bus='sata'/>
       <boot order='2'/>
       <address type='drive' controller='0' bus='0' target='0' unit='1'/>
     </disk>
     <disk type='file' device='disk'>
       <driver name='qemu' type='raw' cache='writeback'/>
-      <source file='/opt/libvirt-images/macos/BaseSystem.img'/>
+      <source file='/opt/libvirt-images/macos2/BaseSystem-10.15.3.img'/>
       <target dev='sdc' bus='sata'/>
       <boot order='3'/>
       <address type='drive' controller='0' bus='0' target='0' unit='2'/>
@@ -127,9 +127,9 @@
       <address type='pci' domain='0x0000' bus='0x00' slot='0x1d' function='0x2'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:8e:e2:66'/>
+      <mac address='52:54:00:8e:e2:67'/>
       <source bridge='virbr0'/>
-      <target dev='tap0'/>
+      <target dev='tap1'/>
       <model type='e1000-82545em'/>
       <address type='pci' domain='0x0000' bus='0x0' slot='0x02' function='0x0'/>
     </interface>
